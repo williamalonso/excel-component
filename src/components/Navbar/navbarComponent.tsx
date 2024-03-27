@@ -1,37 +1,30 @@
-import { useState } from 'react';
 import Link from 'next/link';
 
 const Navbar = () => {
 
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-[#1976D2] p-4">
+      <div className="container mx-auto flex justify-between items-center bg-[#1976D2]">
         <div>
           <Link href="#">
-            <div className="text-white text-xl font-bold">Navbar</div>
+            <div className="text-white text-xl font-bold bg-[#1976D2]">Navbar</div>
           </Link>
         </div>
         <div>
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-4 bg-[#1976D2]">
             <li>
               <Link href="#">
-                <div className="text-white hover:text-gray-300">Sobre</div>
+                <div className="text-white hover:text-gray-300 bg-[#1976D2]">Sobre</div>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <div className="text-white hover:text-gray-300">Serviços</div>
+                <div className="text-white hover:text-gray-300 bg-[#1976D2]">Serviços</div>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <div className="text-white hover:text-gray-300">Contato</div>
+                <div className="text-white hover:text-gray-300 bg-[#1976D2]">Contato</div>
               </Link>
             </li>
           </ul>
