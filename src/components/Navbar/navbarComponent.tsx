@@ -20,21 +20,27 @@ const Navbar = () => {
         {/* Ícone do menu para dispositivos móveis */}
         <div className="md:hidden bg-[#1976D2]">
           <button className="text-white bg-[#1976D2]" onClick={toggleMenu}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 bg-[#1976D2]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-                className="text-[#fff]"
-              />
-            </svg>
+            { isOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 bg-[#1976D2]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path className="text-[#fff]" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 bg-[#1976D2]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path className="text-[#fff]" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
           </button>
         </div>
         <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
