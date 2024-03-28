@@ -13,5 +13,6 @@
   padding: 0;
   color: black;
   box-sizing: border-box;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: #BBDEFB;
 }
