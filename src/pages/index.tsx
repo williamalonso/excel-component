@@ -4,7 +4,7 @@ import PageTitle from "@/components/Title/pageTitleComponent";
 const Home = () => {
   return (
     <>
-      <PageTitle title="Exportando Excel" />
+      <PageTitle title="Excel" />
       <Navbar />
       <div>Home page</div>
     </>
