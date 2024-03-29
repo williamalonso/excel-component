@@ -1,11 +1,11 @@
 import * as React from 'react';
+import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
+import TableRow from '@mui/material/TableRow';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import TableContainer from '@mui/material/TableContainer';
 
 const Datatable = () => {
 
@@ -18,7 +18,7 @@ const Datatable = () => {
   ) {
     return { name, calories, fat, carbs, protein };
   }
-  
+
   const rows = [
     createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
     createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
