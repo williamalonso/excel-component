@@ -20,11 +20,11 @@ const Datatable = () => {
   }
 
   const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
+    createData('Iogurte congelado', 159, 6.0, 24, 4.0),
+    createData('Sanduíche de sorvete', 237, 9.0, 37, 4.3),
+    createData('Bomba de chocolate', 262, 16.0, 24, 6.0),
     createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData('Pão de gengibre', 356, 16.0, 49, 3.9),
   ];
 
   return (
@@ -33,11 +33,11 @@ const Datatable = () => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell className='bg-tableBgColor text-tableTxtColor'>Dessert (100g serving)</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Calories</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Fat&nbsp;(g)</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Protein&nbsp;(g)</TableCell>
+              <TableCell className='bg-tableBgColor text-tableTxtColor'>Sobremesa (porção de 100g)</TableCell>
+              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Calorias</TableCell>
+              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Gordura&nbsp;(g)</TableCell>
+              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Carboidratos&nbsp;(g)</TableCell>
+              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Proteína&nbsp;(g)</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
