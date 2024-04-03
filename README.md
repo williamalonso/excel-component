@@ -29,8 +29,6 @@ A versão React do projeto é a `^18`.
 
 A versão do Next é a `14.1.4`;
 
-A versão do Styled-Component é a `5.3.10`;
-
 A versão do Node é `^20`.
 
 Caso queira, clone ou faça o downlod desse repositório:
