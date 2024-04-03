@@ -3,6 +3,10 @@
     Exportando dados para Excel
 </h1>
 
+<div align="center">
+  <img src="/public/images/Home.png" alt"Home page" title="Home page" width="1000" />
+</div>
+
 ---
 
 
@@ -30,6 +34,8 @@ A versão React do projeto é a `^18`.
 A versão do Next é a `14.1.4`;
 
 A versão do Node é `^20`.
+
+A versão do Tailwind é `^3.3.0`.
 
 Caso queira, clone ou faça o downlod desse repositório:
 
