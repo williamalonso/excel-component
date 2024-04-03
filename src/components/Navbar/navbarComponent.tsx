@@ -25,7 +25,6 @@ const Navbar = () => {
     };
   }, []);
 
-
   return (
     <nav className="bg-[#1976D2] p-4">
       <div className="container mx-auto flex justify-between items-center bg-[#1976D2]">
