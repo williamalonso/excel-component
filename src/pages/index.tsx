@@ -5,7 +5,7 @@ import Datatable from "@/components/Datatable/datatableComponent";
 const Home = () => {
   return (
     <>
-      <PageTitle title="Excel" />
+      <PageTitle title="Exportação Excel" />
       <Navbar />
       <Datatable />
     </>
