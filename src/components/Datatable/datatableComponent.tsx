@@ -44,14 +44,6 @@ const Datatable = () => {
     { label: "Marital Status", value: "is_married" }
   ];
 
-  // const columnsExcelData = [
-  //   { label: 'Sobremesa (porção de 100g)', value: 'Sobremesa'},
-  //   { label: 'Calorias', value: 'Calorias'},
-  //   { label: 'Gordura (g)', value: 'Gordura'},
-  //   { label: 'Carboidratos (g)', value: 'Carboidratos' },
-  //   { label: 'Proteina (g)', value: 'Proteina' },
-  // ];
-
   function createData(
     name: string,
     calories: number,
