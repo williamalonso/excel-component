@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Image from "next/image";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableRow from '@mui/material/TableRow';
@@ -6,8 +7,21 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableContainer from '@mui/material/TableContainer';
+import ExportToExcelButton from '@/components/Excel/excelComponent';
 
 const Datatable = () => {
+
+  const excelData = [
+    { dessert: 'Iogurte congelado',
+      iceCream: 'Sanduíche de sorvete'
+    },
+  ];
+    
+
+  const columnsExcelData = [
+    { label: 'Sobremesa (porção de 100g)', value: 'dessert'},
+    { label: 'Calorias', value: 'iceCream'}
+  ];
 
   function createData(
     name: string,
@@ -58,6 +72,19 @@ const Datatable = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <div className="container mx-auto flex justify-end items-center my-4">
+        <div className="flex rounded-[30px] bg-[#f5f5f5] w-40 h-12 items-center  text-[18px] font-medium cursor-pointer
+        shadow-[0_4px_6px_-1px_rgba(0,0,0,.1),0_2px_4px_-1px_rgba(0,0,0,.06)] justify-evenly">
+          <ExportToExcelButton 
+            data={excelData} 
+            fileName={`Tabela_Excel_2024`}
+            sheetName={`Mes`}
+            columns={columnsExcelData}
+          />
+          {/* <span className="text-[#2587e1] bg-[#f5f5f5]">Exportar</span> */}
+          <Image src="/images/vectorExcelArrow.svg" alt="Seta de download com ícone para cima" width={22} height={22} className="bg-[#f5f5f5]" />
+        </div>
+      </div>
     </div>
   );
 }
