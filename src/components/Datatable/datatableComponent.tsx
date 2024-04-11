@@ -11,16 +11,46 @@ import ExportToExcelButton from '@/components/Excel/excelComponent';
 const Datatable = () => {
 
   const excelData = [
-    { dessert: 'Iogurte congelado',
-      iceCream: 'Sanduíche de sorvete'
+    {
+        name: "Johson",
+        amount: 30000,
+        sex: 'M',
+        is_married: true
     },
+    {
+        name: "Monika",
+        amount: 355000,
+        sex: 'F',
+        is_married: false
+    },
+    {
+        name: "John",
+        amount: 250000,
+        sex: 'M',
+        is_married: false
+    },
+    {
+        name: "Josef",
+        amount: 450500,
+        sex: 'M',
+        is_married: true
+    }
   ];
-    
 
   const columnsExcelData = [
-    { label: 'Sobremesa (porção de 100g)', value: 'dessert'},
-    { label: 'Calorias', value: 'iceCream'}
+    { label: "Name", value: "name" },
+    { label: "Amount", value: "amount" },
+    { label: "Sex", value: "sex" },
+    { label: "Marital Status", value: "is_married" }
   ];
+
+  // const columnsExcelData = [
+  //   { label: 'Sobremesa (porção de 100g)', value: 'Sobremesa'},
+  //   { label: 'Calorias', value: 'Calorias'},
+  //   { label: 'Gordura (g)', value: 'Gordura'},
+  //   { label: 'Carboidratos (g)', value: 'Carboidratos' },
+  //   { label: 'Proteina (g)', value: 'Proteina' },
+  // ];
 
   function createData(
     name: string,
