@@ -10,56 +10,50 @@ import ExportToExcelButton from '@/components/Excel/excelComponent';
 
 const Datatable = () => {
 
-  const excelData = [
+  const dataValues = [
     {
-        name: "Johson",
-        amount: 30000,
-        sex: 'M',
-        is_married: true
+      sobremesa: "Iogurte congelado",
+      calorias: 159,
+      gordura: 6,
+      carboidratos: 24,
+      proteina: 4,
     },
     {
-        name: "Monika",
-        amount: 355000,
-        sex: 'F',
-        is_married: false
+      sobremesa: "Sanduíche de sorvete",
+      calorias: 237,
+      gordura: 9,
+      carboidratos: 37,
+      proteina: 4.3,
     },
     {
-        name: "John",
-        amount: 250000,
-        sex: 'M',
-        is_married: false
+      sobremesa: "Bomba de chocolate",
+      calorias: 262,
+      gordura: 16,
+      carboidratos: 24,
+      proteina: 6,
     },
     {
-        name: "Josef",
-        amount: 450500,
-        sex: 'M',
-        is_married: true
-    }
+      sobremesa: "Cupcake",
+      calorias: 305,
+      gordura: 3.7,
+      carboidratos: 67,
+      proteina: 4.3,
+    },
+    {
+      sobremesa: "Pão de gengibre",
+      calorias: 356,
+      gordura: 16,
+      carboidratos: 49,
+      proteina: 3.9,
+    },
   ];
 
-  const columnsExcelData = [
-    { label: "Name", value: "name" },
-    { label: "Amount", value: "amount" },
-    { label: "Sex", value: "sex" },
-    { label: "Marital Status", value: "is_married" }
-  ];
-
-  function createData(
-    name: string,
-    calories: number,
-    fat: number,
-    carbs: number,
-    protein: number,
-  ) {
-    return { name, calories, fat, carbs, protein };
-  }
-
-  const rows = [
-    createData('Iogurte congelado', 159, 6.0, 24, 4.0),
-    createData('Sanduíche de sorvete', 237, 9.0, 37, 4.3),
-    createData('Bomba de chocolate', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Pão de gengibre', 356, 16.0, 49, 3.9),
+  const dataColumns = [
+    { label: "Sobremesa (porção de 100g)", value: "sobremesa" },
+    { label: "Calorias", value: "calorias" },
+    { label: "Gordura (g)", value: "gordura" },
+    { label: "Carboidratos (g)", value: "carboidratos" },
+    { label: "Proteína (g)", value: "proteina" },
   ];
 
   return (
@@ -68,36 +62,44 @@ const Datatable = () => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell className='bg-tableBgColor text-tableTxtColor'>Sobremesa (porção de 100g)</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Calorias</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Gordura&nbsp;(g)</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Carboidratos&nbsp;(g)</TableCell>
-              <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>Proteína&nbsp;(g)</TableCell>
+              { dataColumns.map(column => (
+                  <TableCell key={column.value} className='bg-tableBgColor text-tableTxtColor'>
+                      { column.label }
+                  </TableCell>
+              ))}
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            { dataValues.map((data) => (
               <TableRow
-                key={row.name}
+                key={data.sobremesa}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell component="th" scope="row" className='bg-tableBgColor text-tableTxtColor'>
-                  {row.name}
+                <TableCell align="left" scope="row" className='bg-tableBgColor text-tableTxtColor'>
+                  {data.sobremesa}
                 </TableCell>
-                <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>{row.calories}</TableCell>
-                <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>{row.fat}</TableCell>
-                <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>{row.carbs}</TableCell>
-                <TableCell align="right" className='bg-tableBgColor text-tableTxtColor'>{row.protein}</TableCell>
+                <TableCell align="left" className='bg-tableBgColor text-tableTxtColor'>
+                  {data.calorias}
+                </TableCell>
+                <TableCell align="left" className='bg-tableBgColor text-tableTxtColor'>
+                  {data.gordura}
+                </TableCell>
+                <TableCell align="left" className='bg-tableBgColor text-tableTxtColor'>
+                  {data.carboidratos}
+                </TableCell>
+                <TableCell align="left" className='bg-tableBgColor text-tableTxtColor'>
+                  {data.proteina}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
       <ExportToExcelButton 
-        data={excelData} 
-        fileName={`Tabela_Excel_2024`}
-        sheetName={`Mes`}
-        columns={columnsExcelData}
+        data={dataValues} 
+        fileName={`Tabela excel`}
+        sheetName={`Dados`}
+        columns={dataColumns}
       />
     </div>
   );
