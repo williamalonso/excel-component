@@ -23,6 +23,7 @@ Esse projeto utiliza as seguintes tecnologias:
 - [Next.js](https://nextjs.org)
 - [Tailwind](https://tailwindcss.com)
 - [TypeScript](https://www.typescriptlang.org)
+- [React Data Export](https://securedeveloper.github.io/react-data-export/)
 
 ---
 
