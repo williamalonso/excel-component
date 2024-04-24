@@ -95,12 +95,14 @@ const Datatable = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <ExportToExcelButton 
-        dataValues={dataValues} 
-        fileName={`Tabela excel`}
-        sheetName={`Dados`}
-        columns={dataColumns}
-      />
+      <div className="container mx-auto flex justify-end items-center my-4">
+        <ExportToExcelButton 
+          dataValues={dataValues} 
+          fileName={`Tabela excel`}
+          sheetName={`Dados`}
+          columns={dataColumns}
+        />
+      </div>
     </div>
   );
 }
