@@ -7,13 +7,19 @@ const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
 const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 
 interface ExportToExcelButtonProps {
-  data?: any | undefined;
-  fileName?: string | undefined;
-  sheetName?: string | undefined;
-  columns?: { label: string; value: string }[] | undefined;
+  dataValues?: {
+    sobremesa: string;
+    calorias: string;
+    gordura: string;
+    carboidratos: string;
+    proteina: string;
+  }[];
+  fileName?: string;
+  sheetName?: string;
+  columns?: { label: string; value: string }[];
 }
 
-const ExportToExcelButton: React.FC<ExportToExcelButtonProps> = ({ data, fileName, sheetName, columns }) => {
+const ExportToExcelButton: React.FC<ExportToExcelButtonProps> = ({ dataValues, fileName, sheetName, columns }) => {
 
   const exportButtonElement = (
     <div className="container mx-auto flex justify-end items-center my-4">
@@ -26,20 +32,18 @@ const ExportToExcelButton: React.FC<ExportToExcelButtonProps> = ({ data, fileNam
   );
 
   return (
-    <ExcelFile 
-      element={exportButtonElement} 
-      filename={fileName} 
-      className="export-button"
-    >
-      { data && columns  && (
-        <ExcelSheet data={data} name={sheetName}>
-          { columns.map((column) => (
-            <ExcelColumn key={column.value} label={column.label} value={column.value} />
-          ))}
+    <ExcelFile element={exportButtonElement} filename={fileName} >
+      { dataValues && columns && (
+        <ExcelSheet data={dataValues} name={sheetName}>
+          { 
+            columns.map((column) => (
+              <ExcelColumn key={column.value} label={column.label} value={column.value} />
+            ))
+          }
         </ExcelSheet>
       )}
     </ExcelFile>
   );
-};
-
+}
+ 
 export default ExportToExcelButton;

@@ -96,7 +96,7 @@ const Datatable = () => {
         </Table>
       </TableContainer>
       <ExportToExcelButton 
-        data={dataValues} 
+        dataValues={dataValues} 
         fileName={`Tabela excel`}
         sheetName={`Dados`}
         columns={dataColumns}
